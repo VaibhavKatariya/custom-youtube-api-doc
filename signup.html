@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=enablejavascript.html">
+    </noscript>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="/js/firebaseconfig.js"></script>
+    <script src="/js/signup.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Signup | Kaily</title>
+</head>
+
+<body>
+
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                Signup
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/index.html">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/login.html">Login</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <img src="assets/img/nav-light.png" alt="" class="nav__img">
+            </div>
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <br><br>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== SECTIONS ====================-->
+        <section class="home" id="home">
+            <div class="login">
+                <div class="login__content">
+                    <div class="login__img">
+                        <img id="img" src="assets/img/welcome-img.svg" alt="">
+                    </div>
+
+                    <div class="login__forms">
+                        <form onsubmit="signUp()" id="loginForm" class="login__registre">
+                            <center><span style="color: red;" id="error"></span></center>
+
+                            <div class="login__box">
+                                <i class='bx bx-user login__icon'></i>
+                                <input id="full_name" placeholder="Full name" class="login__input">
+                            </div>
+
+                            <div class="login__box">
+                                <i class='bx bx-mail-send login__icon'></i>
+                                <input id="email" type="text" placeholder="Email" class="login__input">
+                            </div>
+
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input id="password" type="password" placeholder="Password" class="login__input">
+                            </div>
+
+                            <a href="#" onclick="signUp()" class="login__button">Sign Up</a>
+
+                            <div>
+                                <span class="login__account">Already have an account ?</span>
+                                <a class="login__signin" href="login.html">Login</a>
+                            </div>
+                            <div>
+                                <span class="login__account">Or Return To</span>
+                                <a class="login__signin" href="index.html">Home</a>
+                            </div>
+                        </form>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">Kaily</a>
+
+                <p class="footer__description">
+                    This Christmas give a lot of love
+                </p>
+            </div>
+            <div>
+                <h3 class="footer__title">Live Stream</h3>
+                <ul class="footer__links">
+                    <li> <a href="#" class="footer__link">Latest Stream</a> </li>
+                    <li> <a href="#" class="footer__link">Donation</a> </li>
+                    <li> <a href="/disclaimer.html" class="footer__link">Disclaimer</a> </li>
+                    <li> <a href="#" class="footer__link">Refund Policy</a> </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__title">Pages</h3>
+                <ul class="footer__links">
+                    <li> <a href="/api.html" class="footer__link">API</a> </li>
+                    <li> <a href="/login.html" class="footer__link">Login</a> </li>
+                    <li> <a href="#" class="footer__link">Contact Us</a> </li>
+                    <li> <a href="#" class="footer__link">Disclaimer</a> </li>
+                </ul>
+            </div>
+            <div class="icons">
+                <h3 class="footer__title">Available On</h3> <a target="_blank" href="https://kaily.ga/youtube"
+                    class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAYRJREFUWEftl+1NwzAURc+bANiADWADYAIYgQ1gA2ACyghMAEwA3YARygZlAqPbOMENSRw3iVWhPCk/osb28X2fNfbMbM94mIFiHpkV+l8KOTgEToJbHQN6Uuwj/Nhg2bW4MYYc3AM3FEBT2ApYGDzVN/8D5OAVuJyComHPZ4PrmoK/rw7OgfdMMOUxFwaVW7cU8q66ywz0YEWIbKwOJNKzzEBLKzwzCpAyZugFOoHWwEFfhQzMFUG5SFlX239tcNSmkOsL4/29cbmvV7fATvGni40KVG7miqIptZLKxmRAAZiCVGBhlW8VPxfQI3DaJwQmA/IuE8hVH5AgbsaNIR/U6n0K7OT+N6pCPu2VXalTQCnQlwVrh1ZqVfaqyqa4Kfh21Eq9I8PWsk4gpapiIad1Nldlx0tOGqB9/PBtIGfHf7NaiWiaGJW2Sl89vRttoqrfvpJrjFVDryz6v8xPkeUCwfaqvsEZOvAzeF8ZaKZutChQ4s0Hfz4DxSScFZoViikQ+/0HBttTJd4rcMMAAAAASUVORK5CYII=" /></a>
+                <a target="_blank" href="https://kaily.ga/twitter" class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAnNJREFUWEftV815EzEQfSPBDezkTBy2gyQVsFSQVBB7K4ipAFMBSQX2hgIwFeAS7ApYbDjHdrhhafgU/3yLrV1JxuHLwbruzOjp6c0bLeGJLXpieLAH5LqRPUP/naFX7V+ngvQVBCIwYgL3mUVP8uwmSw6zJaCofXfwG8+jn8mLfh7kxpVF7btISRmPLisd12nWvx/fTprM9LEwj5CwoowI5yBuSK3O8iBN3gagVVFCEgKq9ml6AY3Pvocg4nfDy+r1evwGoFo67QF48xDoCcrQr4T8BuDACxCjw0QZgc+kVo0sORwv82yAugDOV4UZXckqySetbxrKziJ/orWInRoq0MGYgOawXkltDBynkxaD3nuxMw8aaC0a62CsGjpq38ck+GtB8TEYXc3iJl/sKL2/JvCVLyACfxjWqy1bvNUYa+nUdFjdtcFDSxPN758Ru+JXOikQtJUhowc5Uz0lpNHSXNw7Xqzp7Y/kpWmejVUmanNyv64JBBwEaAuBBsIBRvVK4Qy1O/XcUx5rfRnVKxdFxa1IH5OlIodeCb4Iae122mBGi4DXO6RqIrWKyky28C4XflQlsDG9012AKvMfJ0MOg9wGn5Mdqw/ld/I1SC90noPa+YT9a/p77WwNKu2sfIYTkAk21yeEjhlk2vUkENdAahWXCTkYkElYWIEZoCHuHQTGqSHzPpZCnzBgJnMUyEwqtWr6MmPtskVntQhc3bbVGfgOTY2i4ek6lHV0zMSzJoEbAKquArnvAyLu2N7JATXKf6VzYl6+dZbPkQEA8xrIiLgvlO6u/z2EgNhK1NtuEJrn1fahRf8lfg/Ixd6eIRdDfwAyhRA0vJ4PKwAAAABJRU5ErkJggg==" /></a>
+                <a target="_blank" href="https://kaily.ga/instagram" class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAxVJREFUWEftlz1v01AUht/jDIzthNhaNuoikf6CNuotAwt0Qt3SmYEkDjNhpiatxMRSurG1SEiVqKOaX4ArUZuN/IRmpCL3oGs7jeuvxEkEHerV95773PPxnnMJN+yjG8aDW6BRERnbQ1/1dhmS50oar40yGv3fl2RDo95jt+6Ms28kUEc3qwy8BrA4jsGcNV0QtcR54yDPTibQabk93//Nh6BiHhkJzWSX7tBmxalfpK3NBOrops3Aqr+JWd3qSHjNo5EHxhYEF+uvEVFtaI9s4TUqYwOFYdpXGwjYXneNj0VB0taf6GaLgvBn2k31kKWbXQALyjPCa1YnhbGWzQpJbDHxPQBfhNv8YOmmSu5HALrCNe7HbSeAVDVpkN/9SGmysvHjlT0F0Asw3gf7+Vi4zSdR70toK/HqSwCdPHy7RlI7VSaEa+RWYWfJrDGpPOOwAqkLZlt4zT2131oyn4PwKeChA+E1qqcP2ot9Tf7KunASKBLnLKDAi/19gMrp3mNHorStbt9Z3tliibtA6Vx4dcsH1U32gYA3G67RitrIAzoTrpE4MBrS0NAZiIKwsi8RKj/8Ly0kEwMR8G3dNRKqHEnKHpircSmwlnaegUhV5RzAjnCbK3EvTuShNKAwZ9qhNzazdCmEOvTLm1Ff94zdKNTMgCzdVML4FEBqOGOHBuWdIh2zBAoOIdoT541anhxYy+92wfwyLWz/GSjpzVkChSFLT9Z/HrIbl9Shhgx60QWYtzPKXjXm+azknyhkWc0vKYzscCiM5AvjUL1nKox5vSyEUuJ3pcqxijuT0KpZY2sxDxVvrkrNg+bK7BDIiQthFLZwc53l+JGmU4XHjzBxwwEte9TME8VcwRwOaD3hGirxr32p8070FmCuDeabSSEG+4bqnd7j/N6Xdcj1IZ9sJuxuuI3PRaHUkP/nklcJsjWowKxJIhdIGZKX8ujqpVCUJGO9gtGkVq38rKu0SHzjPhTVVLcwJVOPGK28Csz1UPxwVX0lyLIs+ILVgG4fmjOzp/SUXim8fWTICluccsMt0CgH/gXb7w1D/MBwsgAAAABJRU5ErkJggg==" /></a>
+                <a target="_blank" href="https://kaily.ga/facebook" class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAWFJREFUWEftlj9Sg0AUxt/bWKT0CLlBWgcyYzyCXaDCSqjMEeIJTKrFLhWk1BvgGBlLbqDewBPscyh0+DsLC0SKpWT/vB/f97H7EEb24Mh4QAPJHOlVocWKLwWwy1xRRkkcuM8ykN/xXoAMmztI+AAA51WF30K3cZ3GE+u+0LQe1wCUwtQ+JwO6WPHZBPFDZsfJgAzL3yLA3YiAeISAuRAT0IsgcN4P3qcMtGq8U4ZMy08AYJ7dGImujgcvUoFJ13QFomLhNnkZQiENlFN1YfONEOxPFUTaFGUnwvw7Jr7iwNs3zVSrDJmWX7JIVij96+LQW8rmKV0dakCwi0N3PRogRLo/Bl7J2jrAwS1jgNev4e3TIAql7UV2Y0LcVh2M2Tln02kS7W++BwEqbmpY5avjXw9GDSTzXSukFeraD+kM6Qx1zpDNHQYwyyrZ5mbvvaeWWaoy3qr9UCnQdo0Gkin2A/r5lCXzqhJ4AAAAAElFTkSuQmCC" /></a>
+            </div>
+        </div>
+        <span class="footer__copy"> &#169; <span id="year"></span> <a href="https://kaily.ga/youtube"
+                target="_blank">Kaily</a> All rigths reserved</span>
+    </footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear()
+    </script>
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+    </a>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/api.js"></script>
+</body>
+
+</html>

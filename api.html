@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <noscript>
+        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=enablejavascript.html">
+    </noscript>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="/js/firebaseconfig.js"></script>
+    <script src="/js/welcome.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/api.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Kaily API</title>
+</head>
+
+<body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+    <input class='kaily-pop hidden' id='kaily-pop' type='checkbox' checked />
+    <div class='kaily-spop'>
+        <label class='kaily-class' for='kaily-pop'>
+            <svg viewBox='0 0 24 24'>
+                <g transform='translate(5.000000, 8.500000)'>
+                    <path d='M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0' />
+                </g>
+            </svg>
+        </label>
+        <div class='kaily-sld' style="padding-left: 50px;">
+            <center>Table of content</center>
+            <ul>
+                <li style="padding-left: 50px;">
+                    <a href="/index.html">Home</a>
+                </li>
+                <li>
+                    <label for='kaily-pop'>Table Of Content</label>
+                </li>
+                <li>
+                    <a href="#videos#details">Videos</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                Kaily API Docs
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/account.html">Account</a>
+                    </li>
+                    <li class="nav__item">
+                        <label onclick="logout()">Logout</label>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <img src="assets/img/nav-light.png" alt="" class="nav__img">
+            </div>
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <br><br>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== SECTIONS ====================-->
+        <section class="home" id="home">
+            <div class="home__container container grid"> <img src="assets/img/api.svg" alt="" class="home__img">
+                <div class="home__data">
+                    <h1 class="home__title">Welcome to Kaily API Docs</h1>
+                    <p class="home__description"> Get Our Statistics and Snippets in your Website! </p> <a href="#"
+                        style="color: white;" class="button">Get Started</a>
+                </div>
+            </div>
+        </section>
+        <section class="home" id="videos"> <b>
+                <h1>Videos</h1>
+            </b>
+            <h2>prerequisite</h2>
+            <P>This is prerequisite text</P>
+            <h2 style="padding-left: 50px;" id="videos#details">Videos Details</h2>
+            <div class="container grid">
+                <div class="w3-panel w3-pale-blue w3-display-container w3-border w3-round-large"> <span
+                        onclick='navigator.clipboard.writeText("https://kailywebapi-default-rtdb.firebaseio.com/videos/<--eTag-->/<--parameter-->/<--sub-parameter-->.json")'
+                        class="w3-button w3-large w3-display-topright"><img
+                            src="https://img.icons8.com/material-outlined/24/000000/copy.png" /></span>
+                    <h3 class="get">GET</h3> https://kailywebapi-default-rtdb.firebaseio.com/videos/<--eTag-->/
+                        <--parameter-->/ <--sub-parameter-->.json
+                </div>
+            </div>
+            <div class="api">
+                <p>Description:-</p>
+                <P style="padding-left: 55px;">"eTag" can be Found <a class="a" href="#">Here</a> <br> "➣" represents
+                    Parameter & <br> "•" represents Sub-Parameter </P> <br>
+                <div class="uls">◈ eTag</div>
+                <li>eTag is uninque number given to each video. [always between 0-49] where 0 will always be the latest
+                    video and 49 will the last video in latest 50 videos. <br> <b> Note:</b> If you want Change order
+                    and make 0 as last video and 49 as latest video then you may proceed <a class="a" href="#">here</a>
+                </li> <br>
+                <p>
+                <div class="uls">◈ Parameter :-</div>
+                <ol>
+                    <ul>➣ Snippet</ul>
+                    <li>• channelId : returns Channel Id</li>
+                    <li>• channelTitle : returns Channel Title</li>
+                    <li>• channelUrl : returns Channel Url</li>
+                    <li>• categoryId : returns category Id</li>
+                    <li>• title : returns Video Title</li>
+                    <li>• description : returns video description</li>
+                    <li>• defaultAudioLanguage : returns video Audio Language</li>
+                    <li>• tags : returns video tags</li>
+                    <li>• thumbnails : returns video thumbnails</li>
+                    <li>• liveBroadcastContent : returns video Broadcast type</li>
+                    <li>• publishedAt : returns video published time</li>
+                    <ul>➣ Statistics</ul>
+                    <li>• likeCount : returns Video Like Count</li>
+                    <li>• dislikeCount : returns video Dislike Count</li>
+                    <li>• viewCount : returns video View Count</li>
+                    <li>• commentCount : returns video Comment Count</li>
+                    <li>• favoriteCount : returns video favoriteCount</li>
+                </ol>
+                </p>
+            </div>
+        </section> <!-- second section  -->
+        <section class="home" id="videos#order=oldest"> <br>
+            <h2 style="padding-left: 50px;" id="videos#details">Videos Details Order = Oldest</h2>
+            <div class="container grid">
+                <div class="w3-panel w3-pale-blue w3-display-container w3-border w3-round-large"> <span
+                        onclick='navigator.clipboard.writeText("https://kailywebapi-default-rtdb.firebaseio.com/videos/<--eTag-->/<--parameter-->/<--sub-parameter-->.json")'
+                        class="w3-button w3-large w3-display-topright"><img
+                            src="https://img.icons8.com/material-outlined/24/000000/copy.png" /></span>
+                    <h3 class="get">GET</h3> https://kailywebapi-default-rtdb.firebaseio.com/order=oldest/videos/
+                    <--eTag-->/ <--parameter-->/ <--sub-parameter-->.json
+                </div>
+            </div>
+            <div class="api">
+                <p>Description:-</p>
+                <p>From this Endpoint you will get the same result as <a href="#video#details">Video Details</a>. <br>
+                    The difference is that the order with will opposite. the Latest video can be fund with eTag 49 and
+                    the oldest video will be have eTag 0 <br> <b>Note: All Parameter and sub-Parameter will remain
+                        Same</b></p>
+            </div>
+        </section>
+    </main>
+    <!--==================== FOOTER ====================-->
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">Kaily</a>
+
+                <p class="footer__description">
+                    This Christmas give a lot of love
+                </p>
+            </div>
+            <div>
+                <h3 class="footer__title">Live Stream</h3>
+                <ul class="footer__links">
+                    <li> <a href="#" class="footer__link">Latest Stream</a> </li>
+                    <li> <a href="#" class="footer__link">Donation</a> </li>
+                    <li> <a href="/disclaimer.html" class="footer__link">Disclaimer</a> </li>
+                    <li> <a href="#" class="footer__link">Refund Policy</a> </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer__title">Pages</h3>
+                <ul class="footer__links">
+                    <li> <a href="/api.html" class="footer__link">API</a> </li>
+                    <li> <a href="/login.html" class="footer__link">Login</a> </li>
+                    <li> <a href="#" class="footer__link">Contact Us</a> </li>
+                    <li> <a href="#" class="footer__link">Disclaimer</a> </li>
+                </ul>
+            </div>
+            <div class="icons">
+                <h3 class="footer__title">Available On</h3> <a target="_blank" href="https://kaily.ga/youtube"
+                    class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAYRJREFUWEftl+1NwzAURc+bANiADWADYAIYgQ1gA2ACyghMAEwA3YARygZlAqPbOMENSRw3iVWhPCk/osb28X2fNfbMbM94mIFiHpkV+l8KOTgEToJbHQN6Uuwj/Nhg2bW4MYYc3AM3FEBT2ApYGDzVN/8D5OAVuJyComHPZ4PrmoK/rw7OgfdMMOUxFwaVW7cU8q66ywz0YEWIbKwOJNKzzEBLKzwzCpAyZugFOoHWwEFfhQzMFUG5SFlX239tcNSmkOsL4/29cbmvV7fATvGni40KVG7miqIptZLKxmRAAZiCVGBhlW8VPxfQI3DaJwQmA/IuE8hVH5AgbsaNIR/U6n0K7OT+N6pCPu2VXalTQCnQlwVrh1ZqVfaqyqa4Kfh21Eq9I8PWsk4gpapiIad1Nldlx0tOGqB9/PBtIGfHf7NaiWiaGJW2Sl89vRttoqrfvpJrjFVDryz6v8xPkeUCwfaqvsEZOvAzeF8ZaKZutChQ4s0Hfz4DxSScFZoViikQ+/0HBttTJd4rcMMAAAAASUVORK5CYII=" /></a>
+                <a target="_blank" href="https://kaily.ga/twitter" class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAnNJREFUWEftV815EzEQfSPBDezkTBy2gyQVsFSQVBB7K4ipAFMBSQX2hgIwFeAS7ApYbDjHdrhhafgU/3yLrV1JxuHLwbruzOjp6c0bLeGJLXpieLAH5LqRPUP/naFX7V+ngvQVBCIwYgL3mUVP8uwmSw6zJaCofXfwG8+jn8mLfh7kxpVF7btISRmPLisd12nWvx/fTprM9LEwj5CwoowI5yBuSK3O8iBN3gagVVFCEgKq9ml6AY3Pvocg4nfDy+r1evwGoFo67QF48xDoCcrQr4T8BuDACxCjw0QZgc+kVo0sORwv82yAugDOV4UZXckqySetbxrKziJ/orWInRoq0MGYgOawXkltDBynkxaD3nuxMw8aaC0a62CsGjpq38ck+GtB8TEYXc3iJl/sKL2/JvCVLyACfxjWqy1bvNUYa+nUdFjdtcFDSxPN758Ru+JXOikQtJUhowc5Uz0lpNHSXNw7Xqzp7Y/kpWmejVUmanNyv64JBBwEaAuBBsIBRvVK4Qy1O/XcUx5rfRnVKxdFxa1IH5OlIodeCb4Iae122mBGi4DXO6RqIrWKyky28C4XflQlsDG9012AKvMfJ0MOg9wGn5Mdqw/ld/I1SC90noPa+YT9a/p77WwNKu2sfIYTkAk21yeEjhlk2vUkENdAahWXCTkYkElYWIEZoCHuHQTGqSHzPpZCnzBgJnMUyEwqtWr6MmPtskVntQhc3bbVGfgOTY2i4ek6lHV0zMSzJoEbAKquArnvAyLu2N7JATXKf6VzYl6+dZbPkQEA8xrIiLgvlO6u/z2EgNhK1NtuEJrn1fahRf8lfg/Ixd6eIRdDfwAyhRA0vJ4PKwAAAABJRU5ErkJggg==" /></a>
+                <a target="_blank" href="https://kaily.ga/instagram" class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAxVJREFUWEftlz1v01AUht/jDIzthNhaNuoikf6CNuotAwt0Qt3SmYEkDjNhpiatxMRSurG1SEiVqKOaX4ArUZuN/IRmpCL3oGs7jeuvxEkEHerV95773PPxnnMJN+yjG8aDW6BRERnbQ1/1dhmS50oar40yGv3fl2RDo95jt+6Ms28kUEc3qwy8BrA4jsGcNV0QtcR54yDPTibQabk93//Nh6BiHhkJzWSX7tBmxalfpK3NBOrops3Aqr+JWd3qSHjNo5EHxhYEF+uvEVFtaI9s4TUqYwOFYdpXGwjYXneNj0VB0taf6GaLgvBn2k31kKWbXQALyjPCa1YnhbGWzQpJbDHxPQBfhNv8YOmmSu5HALrCNe7HbSeAVDVpkN/9SGmysvHjlT0F0Asw3gf7+Vi4zSdR70toK/HqSwCdPHy7RlI7VSaEa+RWYWfJrDGpPOOwAqkLZlt4zT2131oyn4PwKeChA+E1qqcP2ot9Tf7KunASKBLnLKDAi/19gMrp3mNHorStbt9Z3tliibtA6Vx4dcsH1U32gYA3G67RitrIAzoTrpE4MBrS0NAZiIKwsi8RKj/8Ly0kEwMR8G3dNRKqHEnKHpircSmwlnaegUhV5RzAjnCbK3EvTuShNKAwZ9qhNzazdCmEOvTLm1Ff94zdKNTMgCzdVML4FEBqOGOHBuWdIh2zBAoOIdoT541anhxYy+92wfwyLWz/GSjpzVkChSFLT9Z/HrIbl9Shhgx60QWYtzPKXjXm+azknyhkWc0vKYzscCiM5AvjUL1nKox5vSyEUuJ3pcqxijuT0KpZY2sxDxVvrkrNg+bK7BDIiQthFLZwc53l+JGmU4XHjzBxwwEte9TME8VcwRwOaD3hGirxr32p8070FmCuDeabSSEG+4bqnd7j/N6Xdcj1IZ9sJuxuuI3PRaHUkP/nklcJsjWowKxJIhdIGZKX8ujqpVCUJGO9gtGkVq38rKu0SHzjPhTVVLcwJVOPGK28Csz1UPxwVX0lyLIs+ILVgG4fmjOzp/SUXim8fWTICluccsMt0CgH/gXb7w1D/MBwsgAAAABJRU5ErkJggg==" /></a>
+                <a target="_blank" href="https://kaily.ga/facebook" class="footer__social"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAWFJREFUWEftlj9Sg0AUxt/bWKT0CLlBWgcyYzyCXaDCSqjMEeIJTKrFLhWk1BvgGBlLbqDewBPscyh0+DsLC0SKpWT/vB/f97H7EEb24Mh4QAPJHOlVocWKLwWwy1xRRkkcuM8ykN/xXoAMmztI+AAA51WF30K3cZ3GE+u+0LQe1wCUwtQ+JwO6WPHZBPFDZsfJgAzL3yLA3YiAeISAuRAT0IsgcN4P3qcMtGq8U4ZMy08AYJ7dGImujgcvUoFJ13QFomLhNnkZQiENlFN1YfONEOxPFUTaFGUnwvw7Jr7iwNs3zVSrDJmWX7JIVij96+LQW8rmKV0dakCwi0N3PRogRLo/Bl7J2jrAwS1jgNev4e3TIAql7UV2Y0LcVh2M2Tln02kS7W++BwEqbmpY5avjXw9GDSTzXSukFeraD+kM6Qx1zpDNHQYwyyrZ5mbvvaeWWaoy3qr9UCnQdo0Gkin2A/r5lCXzqhJ4AAAAAElFTkSuQmCC" /></a>
+            </div>
+        </div>
+        <span class="footer__copy"> &#169; <span id="year"></span> <a href="https://kaily.ga/youtube"
+                target="_blank">Kaily</a> All rigths reserved</span>
+    </footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear()
+    </script>
+    <!--=============== SCROLL UP ===============--> 
+    <a href="#" class="scrollup" id="scroll-up"> <i class='bx bx-up-arrow-alt scrollup__icon'></i> </a>
+
+</body>
+<!--=============== SWIPER JS ===============-->
+<script src="assets/js/swiper-bundle.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/api.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    setTimeout(function () {
+        $('.loader_bg').fadeToggle();
+    }, 1500);
+</script>
+<div class="spinner-wrapper">
+    <div class="spinner"></div>
+</div>
+
+</html>

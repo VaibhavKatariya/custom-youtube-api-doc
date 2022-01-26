@@ -1,0 +1,107 @@
+<div id="account" data-test="Loading.....">Loading.....</div> <br>
+    <script>
+        if (localStorage.getItem("accountdata") == null) {
+            firebase.firestore().enableNetwork()
+                .then(() => {
+                    var db = firebase.firestore()
+                    var docRef = db.collection("Pages").doc("account");
+                    docRef.get().then((doc) => {
+                        if (doc.exists) {
+                            localStorage.setItem("accountdata", doc.data().data);
+                            localStorage.setItem("accountversion", doc.data().version);
+                            document.getElementById("account").innerHTML = doc.data().data;
+                        } else { }
+                    }).catch((error) => {
+                        console.log("Error getting document:", error);
+                    });
+                });
+        } else {
+            document.getElementById("account").innerHTML = localStorage.getItem("accountdata");
+            var url = "https://acekaily-default-rtdb.firebaseio.com/version/accountversion.json";
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    let x = localStorage.getItem("accountversion");
+                    let y = data;
+                    if (x == y) {
+                        console.log("version: " + localStorage.getItem("accountversion"))
+                    } else {
+                        old();
+                    }
+                });
+        }
+
+        function old() {
+            let text = "Hi it seems you are viewing old version!\n Please Select Ok to continue with latest version!";
+            if (confirm(text) == true) {
+                var db = firebase.firestore()
+                var docRef = db.collection("Pages").doc("account");
+                docRef.get().then((doc) => {
+                    if (doc.exists) {
+                        localStorage.setItem("accountdata", doc.data().data);
+                        localStorage.setItem("accountversion", doc.data().version);
+                        document.getElementById("account").innerHTML = doc.data().data;
+                    } else { // do nothing
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            } else { }
+        } 
+    </script>
+
+
+
+<!-- API -->
+
+<div id="apis" data-test="Loading.....">Loading.....</div>
+    <script>
+        if (localStorage.getItem("apidata") == null) {
+            firebase.firestore().enableNetwork()
+                .then(() => {
+                    var db = firebase.firestore()
+                    var docRef = db.collection("Pages").doc("api");
+                    docRef.get().then((doc) => {
+                        if (doc.exists) {
+                            localStorage.setItem("apidata", doc.data().data);
+                            localStorage.setItem("apiversion", doc.data().version);
+                            document.getElementById("apis").innerHTML = doc.data().data;
+                        } else { }
+                    }).catch((error) => {
+                        console.log("Error getting document:", error);
+                    });
+                });
+        } else {
+            document.getElementById("apis").innerHTML = localStorage.getItem("apidata");
+            var url = "https://acekaily-default-rtdb.firebaseio.com/version/apiversion.json";
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    let x = localStorage.getItem("apiversion");
+                    let y = data;
+                    if (x == y) {
+                        console.log("version: " + localStorage.getItem("apiversion"))
+                    } else {
+                        old();
+                    }
+                });
+        }
+
+        function old() {
+            let text = "Hi it seems you are viewing old version!\n Please Select Ok to continue with latest version!";
+            if (confirm(text) == true) {
+                var db = firebase.firestore()
+                var docRef = db.collection("Pages").doc("api");
+                docRef.get().then((doc) => {
+                    if (doc.exists) {
+                        localStorage.setItem("apidata", doc.data().data);
+                        localStorage.setItem("apiversion", doc.data().version);
+                        document.getElementById("apis").innerHTML = doc.data().data;
+                    } else { // do nothing
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+            } else { }
+        } 
+    </script>
